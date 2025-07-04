@@ -4158,16 +4158,26 @@ input, select, textarea {
 /* Responsive image styling */
 .responsive-img {
   width: 100%;
-  max-width: 100%;
+  max-width: 300px;      /* Makes the image big but not overly stretched */
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 8px; /* Rounded corners for all images */
+  margin: 40px auto;     /* Adds vertical spacing and centers */
+  border-radius: 50%;    /* Make it circular (remove for rectangular) */
+  object-fit: cover;     /* Prevents distortion */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  transition: transform 0.3s ease;
+}
+
+.responsive-img:hover {
+  transform: scale(1.05); /* Subtle hover zoom effect */
 }
 
 /* Circular profile image specifically */
 .profile-pic {
-  max-width: 250px;
-  border-radius: 50%;
+  width: 200px;          /* You can adjust size */
+  height: 200px;
+  object-fit: cover;     /* Crop to fit perfectly */
+  border-radius: 50%;    /* Makes it circular */
+  display: block;
+  margin: 0 auto;        /* Center the image */
 }
